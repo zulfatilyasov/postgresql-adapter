@@ -317,13 +317,12 @@ var Util = {
    */
   castValues: function castValues(values) {
     return _lodash2['default'].map(values, function (value) {
-      // if (_.isString(value) && value[0] === '[') {
-      //   let arr = JSON.parse(value)
-      //   if (_.isArray(arr)) {
-      //     return arr
-      //   }
-      // }
-
+      if (_.isString(value) && value[0] === '[') {
+        let arr = JSON.parse(value)
+        if (_.isArray(arr)) {
+          return arr
+        }
+      }
       return value;
     });
   },
